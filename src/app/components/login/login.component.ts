@@ -55,7 +55,7 @@ export class LoginComponent {
 
   public signup(){
     if(this.email === this.repitedEmail){
-      this._userService.add(new User(this.name, this.lastname, this.email, this.password))
+      this._userService.add({email: this.email, password: this.password, name: this.name, lastname: this.lastname});
     }
     else{
       this.wrongEmail = true;
